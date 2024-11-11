@@ -30,7 +30,7 @@
 | price              | integer     | null: false                     |
 | prefecture_id      | integer     | null: false                     |
 | postage_id         | integer     | null: false                     |
-| days_id            | integer     | null: false                     |
+| shopping_date_id   | integer     | null: false                     |
 | category_id        | integer     | null: false                     |
 | situation_id       | integer     | null: false                     |
 
