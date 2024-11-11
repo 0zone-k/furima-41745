@@ -52,13 +52,13 @@
 
  - belongs_to :user
  - belongs_to :item
- - belongs_to :addresses
+ - belongs_to :address
 
 ## addresses テーブル
 
 | Column        | Type       | Options                         |
 | ------------- | ---------- | ------------------------------- |
-| address       | string     | null: false                     |
+| post_cord     | string     | null: false                     |
 | prefecture_id | integer    | null: false                     |
 | city          | string     | null: false                     |
 | banchi        | string     | null: false                     |
