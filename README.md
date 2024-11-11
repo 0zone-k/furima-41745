@@ -26,17 +26,21 @@
 | ------------------ | ---------- | ------------------------------- |
 | title              | string     | null: false                     |
 | introduction       | text       | null: false                     |
-| user               | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true  |
 | image              | string     | null: false                     |
-| price              | string     | null: false                     |
-| delivery           | string     | null: false                     |
-| detail             | string     | null: false                     |
+| price              | integer    | null: false                     |
+| delivery_at        | string     | null: false                     |
+| postage            | string     | null: false                     |
+| days               | string     | null: false                     |
+| category           | string     | null: false                     |
+| situation          | string     | null: false                     |
+
 
 
 ### Association
 
  - belongs_to :user
- - has_one :oder
+ - has_one :order
 
 ## orders テーブル
 
@@ -51,11 +55,16 @@
  - belongs_to :item
  - has_one :order
 
-## address テーブル
+## addresses テーブル
 
 | Column    | Type       | Options                         |
 | --------- | ---------- | ------------------------------- |
-| address   | text       | null: false                     |
+| address   | sting      | null: false                     |
+| prefecture| string     | null: false                     |
+| city      | string     | null: false                     |
+| banchi    | string     | null: false                     |
+| apt_name  | string     |                                 |
+| room_num  | string     |                                 |
 | item      | references | null: false , foreign_key: true |
 | user      | references | null: false , foreign_key: true |
 | order     | references | null: false , foreign_key: true |
