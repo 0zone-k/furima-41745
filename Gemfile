@@ -80,3 +80,5 @@ gem 'pg'
 gem 'devise'
 
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'rspec-rails', '~> 4.0.0'
