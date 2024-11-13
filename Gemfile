@@ -78,7 +78,9 @@ group :development do
   gem 'rubocop', require: false
 end
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
 
 gem 'devise'
 
