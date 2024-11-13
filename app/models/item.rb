@@ -8,4 +8,7 @@ class Item < ApplicationRecord
   validates :category_id, presence: true
   validates :situation_id, presence: true
   validates :user, presence: true
+
+  has_one_attached :image
+  belongs_to :user
 end
