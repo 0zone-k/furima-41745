@@ -18,6 +18,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    # @order = Order.find_by(item_id: @item.id)
   end
 
   private
