@@ -2,13 +2,12 @@ class OrdersController < ApplicationController
   before_action :item_find, only: [:index, :create]
   before_action :order_address_new, only: [:index, :new]
   before_action :move_to_root_path, only: [:index, :new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index,:create]
 
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
   end
 
-  def new
-  end
 
   def create
     @order_address = OrderAddress.new(order_address_params)

@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:title, :introduction, :user, :price, :prefecture_id, :postage_id,
-                                 :shopping_date_id, :category_id, :situation_id, :image).merge(user_id: current_user.id, order_id: order.id)
+                                 :shopping_date_id, :category_id, :situation_id, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
   def move_to_root_path
     @order = Order.find_by(item_id: @item.id)
    if @order.item_id == @item.id
-     redirect_to root_path
+    return redirect_to root_path if current_user.id != @item.user.id || @item.order.present?
    end
     
   end
