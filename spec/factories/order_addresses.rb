@@ -6,6 +6,7 @@ FactoryBot.define do
       banchi          { '1-1' }
       apt_name        { '' }
       tel_num         { '11111111111' }
+      token           { '111111111111'}
       user_id { association :user }
       item_id { association :item }
   end
