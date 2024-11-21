@@ -63,7 +63,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_root_path
-    @order = Order.find_by(item_id: @item.id)
    if @order.item_id == @item.id
     return redirect_to root_path if current_user.id != @item.user.id || @item.order.present?
    end
