@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :item_find, only: [:index, :create]
   before_action :order_address_new, only: [:index, :new]
-  before_action :move_to_root_path, only: [:index, :new, :edit, :update, :destroy]
+  before_action :move_to_root_path, only: [:index, :new]
   before_action :authenticate_user!, only: [:index,:create]
 
   def index
