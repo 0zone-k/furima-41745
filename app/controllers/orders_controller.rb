@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   before_action :item_find, only: [:index, :create]
-  before_action :order_address_new, only: [:index, :new]
   before_action :move_to_root_path, only: [:index, :new]
   before_action :authenticate_user!, only: [:index,:create]
 
@@ -29,10 +28,6 @@ class OrdersController < ApplicationController
 
   def item_find
     @item = Item.find(params[:item_id])
-  end
-
-  def order_address_new
-    @order_address = OrderAddress.new
   end
 
   def pay_item
