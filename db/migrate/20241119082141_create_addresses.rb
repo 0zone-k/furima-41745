@@ -7,7 +7,7 @@ class CreateAddresses < ActiveRecord::Migration[7.0]
       t.string :banchi,null: false
       t.string :apt_name
       t.string :tel_num,null: false,unique: true
-      t.references :user, null: false , foreign_key: true 
+      t.references :order, null: false , foreign_key: true 
       t.timestamps
     end
   end
