@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index,:create]
 
   def index
+    @order_address = OrderAddress.new
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
   end
 
